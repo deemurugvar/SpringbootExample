@@ -1,0 +1,19 @@
+****Prerequisites****
+Java Programming language
+
+****Software to be installed****
+Java 24
+IntelliJ Community Version
+Postman
+
+****SpringBoot****
+--annotation based framework to create RestFul Web services
+
+****Important Annotations****
+@SpringBootApplication -- Tells the spring that this is a spring boot application
+@RestController - @ResponseBody + @Controller
+@GetMapping -- used for HTTP GET method
+
+
+
+

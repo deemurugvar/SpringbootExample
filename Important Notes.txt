@@ -4,15 +4,56 @@ Java Programming language
 ****Software to be installed****
 Java 24
 IntelliJ Community Version
-Postman
+Postman Light version
 
 ****SpringBoot****
---annotation based framework to create RestFul Web services
+Spring is one of the most popular frameworks for building enterprise applications, but traditional Spring projects require heavy XML configuration, making them complex for beginners.
+
+Spring Boot solves this problem by providing a ready-to-use, production-grade framework on top of Spring. It eliminates boilerplate configuration, comes with an embedded server and focuses on rapid development.
+
+In short, annotation based framework to create RestFul Web services.
+Well suited for microservice architecture.
+
+Request flow in Springboot:
+Client ->Controller(Presentation layer) ->Service(Service layer) -> Repository(Persistence) ->Database ->Response
 
 ****Important Annotations****
 @SpringBootApplication -- Tells the spring that this is a spring boot application
-@RestController - @ResponseBody + @Controller
-@GetMapping -- used for HTTP GET method
+@RestController - @ResponseBody + @Controller. Tells Spring that this is a controller class
+
+2)Inversion of control and Dependency Injection
+
+Inversion of Control (IoC) is a fundamental design principle implemented by the Spring Framework. It refers to the inversion of control over object creation and management, shifting this responsibility from the application code to the Spring IoC container. 
+
+An IoC container is a common characteristic of frameworks that implement IoC. In the Spring framework, the interface ApplicationContext represents the IoC container. The Spring container is responsible for instantiating, configuring and assembling objects known as beans, as well as managing their life cycles
+
+@Component --> 
+           @Component is a class-level annotation used to mark a class as a Spring-managed bean. When Spring scans the application, it detects classes annotated with       @Component and registers them as beans in the Spring IoC (Inversion of Control) container. These beans can then be injected into other components using dependency injection(@Autowired,  @Qualifier).
+All these annotations (@Service, @Repository, @Controller) are specializations of @Component.
+
+ -- @Autowired --> Tells the spring IoC to take care of the bean(class/component) lifecycle activities when its used along the other spring managed components .
+  -- @Qualifier --> To specify which beans to get instantiate at a particular time
+
+
+3) HTTP method annotations
+@RequestMapping --> class level, contains the baseurl of the rest api.
+@GetMapping -- used to indicate the method as HTTP GET method
+@PostMapping -- used to indicate the method as HTTP Post method
+@PutMapping -- used to indicate the method which handles HTTP Put method
+@DeleteMapping -- used to indicate the method which handles HTTP Delete method
+
+4)Input annotations for http methods
+@PathVariable --> http://localhost:8080/hello/1 
+@RequestParam --> Query parameters --> ?id=1&name=deepika&
+@RequestBody --> Json body in the POST/PUT/Delete request
+
+
+
+
+
+
+
+
 
 
 

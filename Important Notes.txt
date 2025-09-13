@@ -18,7 +18,20 @@ Request flow in Springboot:
 Client ->Controller(Presentation layer) ->Service(Service layer) -> Repository(Persistence) ->Database ->Response
 
 ****Important Annotations****
-@SpringBootApplication -- Tells the spring that this is a spring boot application
+1) Springboot: 
+
+@SpringBootApplication
+ -- Tells the spring that this is a spring boot application.
+ -- @SpringBootConfiguration+@EnableAutoConfiguration+@ComponentScan
+
+ -- @Configuration: Indicates that the class is a source of bean definitions. It replaces the need for separate configuration classes and allows bean definitions in the application to be automatically picked up.
+
+ -- @EnableAutoConfiguration --> This annotation enables Spring Boot's auto-configuration mechanism. Based on the dependencies present in your classpath, Spring Boot automatically configures various aspects of your application, such as data sources, web servers, and more, without requiring explicit configuration.
+(e.g., setting up the web server if Spring Web is on the classpath). 
+
+ -- @ComponentScan -->  This annotation enables component scanning. It instructs Spring to scan the package of the class annotated with @SpringBootApplication and its sub-packages for classes annotated with Spring stereotypes like @Component, @Service, @Repository, and @Controller. These discovered classes are then registered as beans in the application context.
+
+
 @RestController - @ResponseBody + @Controller. Tells Spring that this is a controller class
 
 2)Inversion of control and Dependency Injection
@@ -27,28 +40,56 @@ Inversion of Control (IoC) is a fundamental design principle implemented by the 
 
 An IoC container is a common characteristic of frameworks that implement IoC. In the Spring framework, the interface ApplicationContext represents the IoC container. The Spring container is responsible for instantiating, configuring and assembling objects known as beans, as well as managing their life cycles
 
+DI: Once a class is marked as a component, its instances can be automatically injected into other Spring-managed components using mechanisms like @Autowired.
+
+-- @Autowired --> Tells the spring IoC to take care of the bean(class/component) lifecycle activities when its used along the other spring managed components .
+  -- @Qualifier --> To specify which beans to get instantiate at a particular time
+
 @Component --> 
            @Component is a class-level annotation used to mark a class as a Spring-managed bean. When Spring scans the application, it detects classes annotated with       @Component and registers them as beans in the Spring IoC (Inversion of Control) container. These beans can then be injected into other components using dependency injection(@Autowired,  @Qualifier).
-All these annotations (@Service, @Repository, @Controller) are specializations of @Component.
-
- -- @Autowired --> Tells the spring IoC to take care of the bean(class/component) lifecycle activities when its used along the other spring managed components .
-  -- @Qualifier --> To specify which beans to get instantiate at a particular time
+           
+Classpath Scanning: To enable @Component detection, you typically use @ComponentScan 
+         
+  All these annotations (@Service, @Repository, @Controller) are specializations of @Component.
 
 
 3) HTTP method annotations
 @RequestMapping --> class level, contains the baseurl of the rest api.
+Below are all method levels
 @GetMapping -- used to indicate the method as HTTP GET method
 @PostMapping -- used to indicate the method as HTTP Post method
 @PutMapping -- used to indicate the method which handles HTTP Put method
 @DeleteMapping -- used to indicate the method which handles HTTP Delete method
 
-4)Input annotations for http methods
+4)Request types for http methods
 @PathVariable --> http://localhost:8080/hello/1 
 @RequestParam --> Query parameters --> ?id=1&name=deepika&
 @RequestBody --> Json body in the POST/PUT/Delete request
 
 
+*****H2 Database****
+Content stored will get deleted when the application restarts since its in-memory database
 
+Dependency: com.h2database.h2
+
+*****Spring Data JPA*****
+Java Persistence API
+ -- Module to Simplify the implementation of data access layer 
+ -- powerful Abstraction layer hence reduces the boilerplate code needed for data access operations.
+ -- defines how to persist Java objects into relational databases
+ -- Hibernate is the implementation of JPA
+ -- No need to create CRUD queries, JPA will take care of that by extending jpaRepository
+
+ -- Annotations: @Entity, @Id, @GeneratedValue
+
+Dependency: org.springframework.boot.spring-boot-starter-data-jpa
+
+Lombok jar is used to generate getter and setter and others if @Data annotation is provided at the top of the class
+Key features include automatic generation of getters, setters, equals, hashCode, and toString methods, as well as a facility for automatic resource management
+
+       
+
+          
 
 
 

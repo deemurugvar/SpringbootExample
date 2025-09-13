@@ -1,1 +1,1 @@
-This is a simple API application to interact with Database
+This is a simple TODO LIST REST API application which interacts with H2 Database using Spring boot framework

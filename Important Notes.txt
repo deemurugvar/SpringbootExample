@@ -84,10 +84,32 @@ Java Persistence API
 
 Dependency: org.springframework.boot.spring-boot-starter-data-jpa
 
-Lombok jar is used to generate getter and setter and others if @Data annotation is provided at the top of the class
-Key features include automatic generation of getters, setters, equals, hashCode, and toString methods, as well as a facility for automatic resource management
+****Lombok****
+Key features of lombok include automatic generation of getters, setters, equals, hashCode, and toString methods,logging as well as a facility for automatic resource management
+@SLF4j --> for logging
 
-       
+@NotNull Can be provided at field level to add the not null constraint
+@Size(min=,max=)
+@NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor
+
+@Data is used to generate getter and setter if @Data annotation is provided at the top of the class
+
+Refer the link below for more features: https://projectlombok.org/
+
+******Swagger*****
+Swagger UI: An interactive, browser-based documentation that visualizes the API defined in an OpenAPI document, allowing users to explore and interact with the API directly from the browser.
+Some of the annotations will provide the flexibility to provide additional info about the particular endpoint, response description, field description.
+@ApiResponses
+@ApiResponse
+@Schema
+
+Dependency: springdoc-openapi-starter-webmvc-ui
+Url to access swagger api: /swagger-ui/index.html
+
+
+
+
+
 
           
 

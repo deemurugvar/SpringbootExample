@@ -1,5 +1,6 @@
-package com.deepika.SpringbootExample;
+package com.deepika.SpringbootExample.controller;
 
+import com.deepika.SpringbootExample.service.TodoService;
 import com.deepika.SpringbootExample.models.Todo;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

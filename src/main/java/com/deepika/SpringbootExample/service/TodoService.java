@@ -1,6 +1,7 @@
-package com.deepika.SpringbootExample;
+package com.deepika.SpringbootExample.service;
 
 import com.deepika.SpringbootExample.models.Todo;
+import com.deepika.SpringbootExample.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

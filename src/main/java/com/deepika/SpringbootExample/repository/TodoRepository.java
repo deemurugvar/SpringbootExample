@@ -1,4 +1,4 @@
-package com.deepika.SpringbootExample;
+package com.deepika.SpringbootExample.repository;
 
 import com.deepika.SpringbootExample.models.Todo;
 

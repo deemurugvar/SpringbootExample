@@ -1,4 +1,4 @@
-package com.deepika.SpringbootExample;
+package com.deepika.SpringbootExample.controller;
 
 import org.springframework.web.bind.annotation.*;
 

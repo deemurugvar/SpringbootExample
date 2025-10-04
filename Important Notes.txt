@@ -106,7 +106,13 @@ Some of the annotations will provide the flexibility to provide additional info 
 Dependency: springdoc-openapi-starter-webmvc-ui
 Url to access swagger api: /swagger-ui/index.html
 
+******Spring Security*******
+Spring Security is a framework for securing Java applications. It provides authentication, authorization and protection against common attacks.
 
+Dependency: org.springframework.boot.spring-boot-starter-security
+
+Annotation:
+ --@Configuration 
 
 
 
